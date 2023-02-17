@@ -349,6 +349,7 @@ Makefile: ..\MusiFlow\MusiFlow.pro ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\win3
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\qt_config.prf \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\win32-msvc\qmake.conf \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\exclusive_builds.prf \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\common\msvc-version.conf \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\toolchain.prf \
@@ -375,14 +376,20 @@ Makefile: ..\MusiFlow\MusiFlow.pro ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\win3
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\yacc.prf \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\lex.prf \
 		..\MusiFlow\MusiFlow.pro \
+		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6MultimediaWidgets.prl \
+		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Multimedia.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Widgets.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Gui.prl \
+		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Network.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Core.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6EntryPoint.prl \
-		.qmake.stash \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\build_pass.prf \
+		..\MusiFlow\resources.qrc \
+		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6MultimediaWidgetsd.prl \
+		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Multimediad.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Widgetsd.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Guid.prl \
+		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Networkd.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Cored.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6EntryPointd.prl
 	$(QMAKE) -o Makefile ..\MusiFlow\MusiFlow.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -651,6 +658,7 @@ Makefile: ..\MusiFlow\MusiFlow.pro ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\win3
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\qt_config.prf:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\win32-msvc\qmake.conf:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\spec_post.prf:
+.qmake.stash:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\exclusive_builds.prf:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\common\msvc-version.conf:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\toolchain.prf:
@@ -677,14 +685,20 @@ Makefile: ..\MusiFlow\MusiFlow.pro ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\win3
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\yacc.prf:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\lex.prf:
 ..\MusiFlow\MusiFlow.pro:
+..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6MultimediaWidgets.prl:
+..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Multimedia.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Widgets.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Gui.prl:
+..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Network.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Core.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6EntryPoint.prl:
-.qmake.stash:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\build_pass.prf:
+..\MusiFlow\resources.qrc:
+..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6MultimediaWidgetsd.prl:
+..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Multimediad.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Widgetsd.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Guid.prl:
+..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Networkd.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Cored.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6EntryPointd.prl:
 qmake: FORCE
