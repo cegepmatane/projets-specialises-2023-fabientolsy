@@ -43,14 +43,14 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setEnabled(true);
-        label->setGeometry(QRect(120, 60, 81, 71));
+        label->setGeometry(QRect(30, 60, 171, 351));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(320, 270, 111, 51));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

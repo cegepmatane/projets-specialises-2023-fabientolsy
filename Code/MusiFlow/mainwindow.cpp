@@ -1,5 +1,10 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "fstream"
+#include "string"
+#include "iostream"
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,6 +46,28 @@ void MainWindow::on_pushButton_clicked()
     audio->setVolume(50);
     player->play();
 
+    ifstream fichier("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/paroles/test.txt", ios::in);
+
+    string chaine1 = " ";
+
+    if(fichier)
+    {
+        cerr << "Fichier ouvert";
+
+        fichier >> chaine1;
+
+        QString chaineTest = QString::fromStdString(chaine1);
+
+        ui->label->clear();
+
+        ui->label->setText(chaineTest);
+    }
+
+    else
+    {
+        cerr << "Impossible d'ouvrir le fichier";
+    }
+
 }
 
 
@@ -49,3 +76,6 @@ void MainWindow::on_pushButton_2_clicked()
     ui->label->clear();
     player->pause();
 }
+
+
+
