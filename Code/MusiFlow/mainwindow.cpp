@@ -47,4 +47,5 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->label->clear();
+    player->pause();
 }
