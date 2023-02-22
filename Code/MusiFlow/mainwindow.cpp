@@ -59,6 +59,8 @@ void MainWindow::on_pushButton_clicked()
     {
         cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
 
+        ui->label->clear();
+
         //fichier >> chaine1;
         /**
          * ECRIT COMME CA, CA PERMET DE METTRE UNIQUEMENT LE PREMIER BLOC DE TEXTE DU FICHIER DANS LA VARIABLE
@@ -92,7 +94,14 @@ void MainWindow::on_pushButton_clicked()
 
             for(string acces : liste)
             {
-                cerr << acces;
+                //cerr << acces;
+
+                QString affichage = QString::fromStdString(acces);
+                //string valeurLabel = ui->label->text().toStdString();
+                //cerr << valeurLabel;
+                QString valeurLabel = ui->label->text();
+
+                ui->label->setText(valeurLabel + " " + affichage);
             }
         }
     }

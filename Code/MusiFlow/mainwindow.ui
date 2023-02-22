@@ -35,8 +35,8 @@
      <rect>
       <x>30</x>
       <y>60</y>
-      <width>171</width>
-      <height>351</height>
+      <width>681</width>
+      <height>431</height>
      </rect>
     </property>
     <property name="text">
@@ -56,6 +56,9 @@
      <string>Hide</string>
     </property>
    </widget>
+   <zorder>label</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -63,7 +66,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
