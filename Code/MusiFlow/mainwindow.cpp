@@ -52,22 +52,35 @@ void MainWindow::on_pushButton_clicked()
     // AFFICHAGE DES PAROLES
     ifstream fichier("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
 
+    list<string> liste;
     string chaine1 = " "; // VARIABLE OU IL Y A LES PAROLES
 
     if(fichier) // SI ON REUSSIT A OUVRIR LE FICHIER TEXT
     {
         cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
 
-        fichier >> chaine1;
+        //fichier >> chaine1;
         /**
          * ECRIT COMME CA, CA PERMET DE METTRE UNIQUEMENT LE PREMIER BLOC DE TEXTE DU FICHIER DANS LA VARIABLE
          * CE QUE J'APPELLE BLOC EST TOUT LE TEXTE JUSQU'QU PREMIER ESPACE
          * */
 
-        QString chaineTest = QString::fromStdString(chaine1); // ON CONVERTI LA VARIABLE OU IL Y A LE TEXTE EN VARTIABLE POUVANT ETRE AFFICHER DANS LE CLIENT
+        /* chaineTest = QString::fromStdString(chaine1); // ON CONVERTI LA VARIABLE OU IL Y A LE TEXTE EN VARTIABLE POUVANT ETRE AFFICHER DANS LE CLIENT
         ui->label->clear(); // ON S'ASSURE QUE LA ZONE DE TEXTE SOIT VIDE
 
-        ui->label->setText(chaineTest); // ON AFFICHE LES PAROLES RECUES
+        ui->label->setText(chaineTest);*/ // ON AFFICHE LES PAROLES RECUES
+
+        int i = 0;
+
+        list<string>::iterator it = liste.begin();
+
+        for(string s; fichier >> s;)
+        {
+            chaine1 = s + ' ';
+            //cerr << chaine1;
+            liste.insert(it, chaine1);
+            i++;
+        }
     }
 
     else
