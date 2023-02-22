@@ -81,6 +81,20 @@ void MainWindow::on_pushButton_clicked()
             liste.insert(it, chaine1);
             i++;
         }
+
+        if(liste.empty())
+        {
+            cerr << "Liste vide !";
+        }
+        else
+        {
+            cerr << "Acces a la liste: ";
+
+            for(string acces : liste)
+            {
+                cerr << acces;
+            }
+        }
     }
 
     else
