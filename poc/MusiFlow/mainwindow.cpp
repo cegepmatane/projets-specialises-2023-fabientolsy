@@ -45,12 +45,15 @@ void MainWindow::on_pushButton_clicked()
     player->play();
     printf("play \n");*/
 
-    player->setSource(QUrl::fromLocalFile("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/test.mp3")); // LIGNE FONCTIONNELLE
+    QString const prefix("../MusiFlow/"); // PERMET D'AVOIR UN CHEMIN ABSOLUT
+
+    player->setSource(QUrl::fromLocalFile(prefix + "test.mp3"));
     audio->setVolume(50);
     player->play();
 
     // AFFICHAGE DES PAROLES
-    ifstream fichier("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
+    string const prefixConverti = prefix.toStdString();
+    ifstream fichier(prefixConverti + "paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
 
     list<string> listeParoles;
     string parole = " "; // VARIABLE OU IL Y A LES PAROLES
