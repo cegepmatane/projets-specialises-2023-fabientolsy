@@ -68,6 +68,7 @@ public:
         progressBar->setValue(24);
         paroles = new QCheckBox(centralwidget);
         paroles->setObjectName("paroles");
+        paroles->setEnabled(false);
         paroles->setGeometry(QRect(190, 10, 93, 26));
         MainWindow->setCentralWidget(centralwidget);
         label->raise();

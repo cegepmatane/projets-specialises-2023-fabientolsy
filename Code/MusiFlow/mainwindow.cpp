@@ -33,94 +33,13 @@ MainWindow::~MainWindow()
 void MainWindow::on_richGirl_clicked()
 {
 
+    ui->paroles->setEnabled(true);
+    ui->paroles->setPalette(QColor(255,255,255,255));
+
     // LECTURE DU FICHIER AUDIO
-
-    ui->label->setText("Hello Word !");
-
-    /*QString fichier = "D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/test.mp3";
-    printf("QString \n");
-    player->setSource(QUrl::fromLocalFile(fichier));
-    player->set
-    printf("setSource \n");
-    player->play();
-    printf("play \n");*/
-
     player->setSource(QUrl::fromLocalFile("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/test.mp3")); // LIGNE FONCTIONNELLE
     audio->setVolume(50);
     player->play();
-
-    // AFFICHAGE DES PAROLES
-    ifstream fichier("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
-
-    list<string> listeParoles;
-    string parole = " "; // VARIABLE OU IL Y A LES PAROLES
-
-    if(fichier) // SI ON REUSSIT A OUVRIR LE FICHIER TEXT
-    {
-        cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
-
-        ui->label->clear();
-
-        //fichier >> chaine1;
-        /**
-         * ECRIT COMME CA, CA PERMET DE METTRE UNIQUEMENT LE PREMIER BLOC DE TEXTE DU FICHIER DANS LA VARIABLE
-         * CE QUE J'APPELLE BLOC EST TOUT LE TEXTE JUSQU'QU PREMIER ESPACE
-         * */
-
-        /* chaineTest = QString::fromStdString(chaine1); // ON CONVERTI LA VARIABLE OU IL Y A LE TEXTE EN VARTIABLE POUVANT ETRE AFFICHER DANS LE CLIENT
-        ui->label->clear(); // ON S'ASSURE QUE LA ZONE DE TEXTE SOIT VIDE
-
-        ui->label->setText(chaineTest);*/ // ON AFFICHE LES PAROLES RECUES
-
-        list<string>::iterator it = listeParoles.begin();
-        int compteurMot = 0;
-
-        for(string s; fichier >> s;)
-        {
-            parole = s + ' ';
-            //cerr << parole;
-            listeParoles.insert(it, parole);
-
-        }
-
-        if(listeParoles.empty())
-        {
-            cerr << "Liste vide !";
-        }
-        else
-        {
-            cerr << "Acces a la liste: ";
-
-            for(string paroles : listeParoles)
-            {
-                cerr << paroles;
-
-                QString affichage = QString::fromStdString(paroles);
-                //string valeurLabel = ui->label->text().toStdString();
-                //cerr << valeurLabel;
-                QString valeurLabel = ui->label->text();
-
-                if(compteurMot < 30)
-                {
-                    ui->label->setText(valeurLabel + " " + affichage);
-
-                    compteurMot = compteurMot + 1;
-                }
-                else
-                {
-                    ui->label->setText(valeurLabel + '\n' + affichage);
-                    compteurMot = 1;
-                }
-
-            }
-        }
-    }
-
-    else
-    {
-        cerr << "Impossible d'ouvrir le fichier";
-    }
-
 }
 
 
@@ -136,5 +55,73 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_paroles_stateChanged(int arg1)
 {
     cerr << arg1;
+
+    if(arg1 == 2)
+    {
+        ifstream fichier("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
+
+        list<string> listeParoles;
+        string parole = " "; // VARIABLE OU IL Y A LES PAROLES
+
+        if(fichier) // SI ON REUSSIT A OUVRIR LE FICHIER TEXT
+        {
+            cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
+
+            ui->label->clear();
+
+            list<string>::iterator it = listeParoles.begin();
+            int compteurMot = 0;
+
+            for(string s; fichier >> s;)
+            {
+                parole = s + ' ';
+                //cerr << parole;
+                listeParoles.insert(it, parole);
+
+            }
+
+            if(listeParoles.empty())
+            {
+                cerr << "Liste vide !";
+            }
+            else
+            {
+                cerr << "Acces a la liste: ";
+
+                for(string paroles : listeParoles)
+                {
+                    cerr << paroles;
+
+                    QString affichage = QString::fromStdString(paroles);
+                    //string valeurLabel = ui->label->text().toStdString();
+                    //cerr << valeurLabel;
+                    QString valeurLabel = ui->label->text();
+
+                    if(compteurMot < 30)
+                    {
+                        ui->label->setText(valeurLabel + " " + affichage);
+
+                        compteurMot = compteurMot + 1;
+                    }
+                    else
+                    {
+                        ui->label->setText(valeurLabel + '\n' + affichage);
+                        compteurMot = 1;
+                    }
+
+                }
+            }
+        }
+
+        else
+        {
+            cerr << "Impossible d'ouvrir le fichier";
+        }
+    }
+
+    else
+    {
+        ui->label->clear();
+    }
 }
 
