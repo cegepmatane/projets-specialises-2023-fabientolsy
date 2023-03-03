@@ -30,7 +30,7 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_richGirl_clicked()
 {
 
     // LECTURE DU FICHIER AUDIO
@@ -73,6 +73,7 @@ void MainWindow::on_pushButton_clicked()
         ui->label->setText(chaineTest);*/ // ON AFFICHE LES PAROLES RECUES
 
         list<string>::iterator it = listeParoles.begin();
+        int compteurMot = 0;
 
         for(string s; fichier >> s;)
         {
@@ -99,7 +100,18 @@ void MainWindow::on_pushButton_clicked()
                 //cerr << valeurLabel;
                 QString valeurLabel = ui->label->text();
 
-                ui->label->setText(valeurLabel + " " + affichage);
+                if(compteurMot < 30)
+                {
+                    ui->label->setText(valeurLabel + " " + affichage);
+
+                    compteurMot = compteurMot + 1;
+                }
+                else
+                {
+                    ui->label->setText(valeurLabel + '\n' + affichage);
+                    compteurMot = 1;
+                }
+
             }
         }
     }
@@ -119,4 +131,10 @@ void MainWindow::on_pushButton_2_clicked()
 }
 
 
+
+
+void MainWindow::on_paroles_stateChanged(int arg1)
+{
+    cerr << arg1;
+}
 

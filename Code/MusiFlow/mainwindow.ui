@@ -6,25 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1327</width>
+    <height>876</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="richGirl">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>210</y>
+      <x>10</x>
+      <y>10</y>
       <width>111</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Show</string>
+     <string>Rich Girl</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -33,10 +33,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>60</y>
-      <width>681</width>
-      <height>431</height>
+      <x>140</x>
+      <y>80</y>
+      <width>1161</width>
+      <height>741</height>
      </rect>
     </property>
     <property name="text">
@@ -46,8 +46,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>270</y>
+      <x>10</x>
+      <y>70</y>
       <width>111</width>
       <height>51</height>
      </rect>
@@ -56,16 +56,81 @@
      <string>Hide</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pause">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pause</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lecture">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>10</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lecture</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>10</y>
+      <width>451</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="paroles">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>10</y>
+      <width>93</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Paroles</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>richGirl</zorder>
    <zorder>pushButton_2</zorder>
+   <zorder>pause</zorder>
+   <zorder>lecture</zorder>
+   <zorder>progressBar</zorder>
+   <zorder>paroles</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1327</width>
      <height>21</height>
     </rect>
    </property>
