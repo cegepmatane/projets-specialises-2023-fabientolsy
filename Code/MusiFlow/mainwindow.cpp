@@ -19,8 +19,6 @@ MainWindow::MainWindow(QWidget *parent)
     player->setAudioOutput(audio);
     connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
 
-    chanson = 0;
-
     //vw = new QVideoWidget(this);
     //player->setVideoOutput(vw);
     //this->setCentralWidget(vw);
@@ -35,6 +33,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_richGirl_clicked()
 {
     chanson = 1;
+
+    cerr << chanson;
 
     ui->paroles->setEnabled(true);
     ui->paroles->setPalette(QColor(255,255,255,255));
@@ -65,7 +65,15 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 
     if(arg1 == 2)
     {
-        ifstream fichier(prefixTraduit + "paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
+        ifstream fichier;
+
+        cerr << chanson;
+        switch (chanson) {
+        case 1:
+            fichier.open(prefixTraduit + "paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
+            break;
+        }
+
 
         list<string> listeParoles;
         string parole = " "; // VARIABLE OU IL Y A LES PAROLES

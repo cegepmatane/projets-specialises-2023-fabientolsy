@@ -384,7 +384,6 @@ Makefile: ..\..\code\MusiFlow\MusiFlow.pro ..\..\..\..\Qt\6.6.0\msvc2019_64\mksp
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Core.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6EntryPoint.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\build_pass.prf \
-		..\..\code\MusiFlow\resources.qrc \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6MultimediaWidgetsd.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Multimediad.prl \
 		..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Widgetsd.prl \
@@ -693,7 +692,6 @@ Makefile: ..\..\code\MusiFlow\MusiFlow.pro ..\..\..\..\Qt\6.6.0\msvc2019_64\mksp
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Core.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6EntryPoint.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\mkspecs\features\build_pass.prf:
-..\..\code\MusiFlow\resources.qrc:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6MultimediaWidgetsd.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Multimediad.prl:
 ..\..\..\..\Qt\6.6.0\msvc2019_64\lib\Qt6Widgetsd.prl:
