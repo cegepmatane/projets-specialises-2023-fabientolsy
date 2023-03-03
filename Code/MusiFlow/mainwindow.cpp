@@ -40,7 +40,7 @@ void MainWindow::on_richGirl_clicked()
     ui->paroles->setPalette(QColor(255,255,255,255));
 
     // LECTURE DU FICHIER AUDIO
-    player->setSource(QUrl::fromLocalFile("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/test.mp3")); // LIGNE FONCTIONNELLE
+    player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
     audio->setVolume(50);
     player->play();
 
@@ -61,9 +61,11 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 {
     cerr << arg1;
 
+    string const prefixTraduit = prefix.toStdString();
+
     if(arg1 == 2)
     {
-        ifstream fichier("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
+        ifstream fichier(prefixTraduit + "paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
 
         list<string> listeParoles;
         string parole = " "; // VARIABLE OU IL Y A LES PAROLES

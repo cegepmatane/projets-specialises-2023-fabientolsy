@@ -45,5 +45,7 @@ private:
 
     int chanson;
 
+    QString const prefix = "../MusiFlow/";
+
 };
 #endif // MAINWINDOW_H
