@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
     player->setAudioOutput(audio);
     connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
 
+    chanson = 0;
+
     //vw = new QVideoWidget(this);
     //player->setVideoOutput(vw);
     //this->setCentralWidget(vw);
@@ -32,6 +34,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_richGirl_clicked()
 {
+    chanson = 1;
 
     ui->paroles->setEnabled(true);
     ui->paroles->setPalette(QColor(255,255,255,255));
@@ -40,6 +43,8 @@ void MainWindow::on_richGirl_clicked()
     player->setSource(QUrl::fromLocalFile("D:/GitHub/projets-specialises-2023-fabientolsy/Code/MusiFlow/test.mp3")); // LIGNE FONCTIONNELLE
     audio->setVolume(50);
     player->play();
+
+
 }
 
 

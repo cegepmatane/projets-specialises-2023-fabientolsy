@@ -43,5 +43,7 @@ private:
 
     QVideoWidget* vw;
 
+    int chanson;
+
 };
 #endif // MAINWINDOW_H
