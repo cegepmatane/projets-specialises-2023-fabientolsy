@@ -33,6 +33,8 @@ private slots:
 
     void on_pause_clicked();
 
+    void on_lecture_clicked();
+
 private:
     Ui::MainWindow *ui;
 

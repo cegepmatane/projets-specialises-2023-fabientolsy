@@ -19,6 +19,11 @@ MainWindow::MainWindow(QWidget *parent)
     player->setAudioOutput(audio);
     connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
 
+    connect(player,&QMediaPlayer::durationChanged, ui->progressBar, &QProgressBar::setMaximum);
+    connect(player,&QMediaPlayer::positionChanged, ui->progressBar, &QProgressBar::setValue);
+
+    ui->progressBar->setRange(0,100);
+
     //vw = new QVideoWidget(this);
     //player->setVideoOutput(vw);
     //this->setCentralWidget(vw);
@@ -36,16 +41,17 @@ void MainWindow::on_richGirl_clicked()
 
     cerr << chanson;
 
+    // LECTURE DU FICHIER AUDIO
+    player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
+    audio->setVolume(50);
+    player->play();
+
     ui->paroles->setEnabled(true);
     ui->paroles->setPalette(QColor(255,255,255,255));
 
     ui->pause->setEnabled(true);
     ui->lecture->setEnabled(true);
-
-    // LECTURE DU FICHIER AUDIO
-    player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
-    audio->setVolume(50);
-    player->play();
+    ui->progressBar->setEnabled(true);
 
 
 }
@@ -144,3 +150,6 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 }
 
 void MainWindow::on_pause_clicked() { player->pause() ;}
+
+void MainWindow::on_lecture_clicked(){ player->play(); }
+
