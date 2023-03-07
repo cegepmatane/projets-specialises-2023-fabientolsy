@@ -31,6 +31,8 @@ private slots:
 
     void on_paroles_stateChanged(int arg1);
 
+    void on_pause_clicked();
+
 private:
     Ui::MainWindow *ui;
 

@@ -39,6 +39,9 @@ void MainWindow::on_richGirl_clicked()
     ui->paroles->setEnabled(true);
     ui->paroles->setPalette(QColor(255,255,255,255));
 
+    ui->pause->setEnabled(true);
+    ui->lecture->setEnabled(true);
+
     // LECTURE DU FICHIER AUDIO
     player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
     audio->setVolume(50);
@@ -140,3 +143,4 @@ void MainWindow::on_paroles_stateChanged(int arg1)
     }
 }
 
+void MainWindow::on_pause_clicked() { player->pause() ;}
