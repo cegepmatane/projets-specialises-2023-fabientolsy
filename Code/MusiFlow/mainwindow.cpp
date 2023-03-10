@@ -46,20 +46,24 @@ void MainWindow::on_richGirl_clicked()
     audio->setVolume(50);
     player->play();
 
+    // Bouton pour afficher les paroles cliquable
     ui->paroles->setEnabled(true);
     ui->paroles->setPalette(QColor(255,255,255,255));
 
+    // Activation de la barre de progression et des boutons de pause
     ui->pause->setEnabled(true);
     ui->lecture->setEnabled(true);
     ui->progressBar->setEnabled(true);
 
-
+    // Affichage du tittre de la chanson
+    ui->titre->setEnabled(true);
+    ui->titre->setText(ui->richGirl->text());
 }
 
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    ui->label->clear();
+    ui->paroleAffichage->clear();
     player->pause();
 }
 
@@ -91,7 +95,7 @@ void MainWindow::on_paroles_stateChanged(int arg1)
         {
             cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
 
-            ui->label->clear();
+            ui->paroleAffichage->clear();
 
             list<string>::iterator it = listeParoles.begin();
             int compteurMot = 0;
@@ -117,19 +121,19 @@ void MainWindow::on_paroles_stateChanged(int arg1)
                     cerr << paroles;
 
                     QString affichage = QString::fromStdString(paroles);
-                    //string valeurLabel = ui->label->text().toStdString();
-                    //cerr << valeurLabel;
-                    QString valeurLabel = ui->label->text();
+                    //string valeurparoleAffichage = ui->paroleAffichage->text().toStdString();
+                    //cerr << valeurparoleAffichage;
+                    QString valeurparoleAffichage = ui->paroleAffichage->text();
 
                     if(compteurMot < 30)
                     {
-                        ui->label->setText(valeurLabel + " " + affichage);
+                        ui->paroleAffichage->setText(valeurparoleAffichage + " " + affichage);
 
                         compteurMot = compteurMot + 1;
                     }
                     else
                     {
-                        ui->label->setText(valeurLabel + '\n' + affichage);
+                        ui->paroleAffichage->setText(valeurparoleAffichage + '\n' + affichage);
                         compteurMot = 1;
                     }
 
@@ -145,7 +149,7 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 
     else
     {
-        ui->label->clear();
+        ui->paroleAffichage->clear();
     }
 }
 

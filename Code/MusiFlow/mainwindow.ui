@@ -27,7 +27,7 @@
      <string>Rich Girl</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="paroleAffichage">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -41,6 +41,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -94,7 +97,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>820</x>
       <y>10</y>
       <width>451</width>
       <height>23</height>
@@ -120,13 +123,30 @@
      <string>Paroles</string>
     </property>
    </widget>
-   <zorder>label</zorder>
+   <widget class="QLabel" name="titre">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>10</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>pause</zorder>
    <zorder>lecture</zorder>
    <zorder>progressBar</zorder>
    <zorder>paroles</zorder>
+   <zorder>titre</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
