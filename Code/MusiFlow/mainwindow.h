@@ -57,6 +57,6 @@ private:
 
 };
 
-void afficherTitre();
+void afficherTitre(std::string titre);
 
 #endif // MAINWINDOW_H

@@ -59,7 +59,7 @@ void MainWindow::on_richGirl_clicked()
     ui->titre->setEnabled(true);
     ui->titre->setText(ui->richGirl->text());
 
-    afficherTitre();
+    afficherTitre(ui->richGirl->text().toStdString());
 }
 
 
@@ -159,7 +159,7 @@ void MainWindow::on_pause_clicked() { player->pause() ;}
 
 void MainWindow::on_lecture_clicked(){ player->play(); }
 
-void afficherTitre()
+void afficherTitre(string titre)
 {
-    cerr << "Affichage du titre";
+    cerr << "Affichage du titre: " + titre;
 }
