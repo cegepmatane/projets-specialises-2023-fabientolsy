@@ -24,6 +24,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+
 private slots:
     void on_richGirl_clicked();
 
@@ -34,6 +36,8 @@ private slots:
     void on_pause_clicked();
 
     void on_lecture_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;
@@ -52,4 +56,7 @@ private:
     QString const prefix = "../MusiFlow/";
 
 };
+
+void afficherTitre();
+
 #endif // MAINWINDOW_H

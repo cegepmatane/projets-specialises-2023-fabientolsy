@@ -58,6 +58,8 @@ void MainWindow::on_richGirl_clicked()
     // Affichage du tittre de la chanson
     ui->titre->setEnabled(true);
     ui->titre->setText(ui->richGirl->text());
+
+    afficherTitre();
 }
 
 
@@ -157,3 +159,7 @@ void MainWindow::on_pause_clicked() { player->pause() ;}
 
 void MainWindow::on_lecture_clicked(){ player->play(); }
 
+void afficherTitre()
+{
+    cerr << "Affichage du titre";
+}
