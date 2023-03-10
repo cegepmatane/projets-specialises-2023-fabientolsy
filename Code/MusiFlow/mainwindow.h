@@ -58,5 +58,6 @@ private:
 };
 
 void afficherTitre(std::string titre, Ui::MainWindow ui);
+void activerBoutons(Ui::MainWindow ui);
 
 #endif // MAINWINDOW_H

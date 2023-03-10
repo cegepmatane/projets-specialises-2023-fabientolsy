@@ -46,14 +46,7 @@ void MainWindow::on_richGirl_clicked()
     audio->setVolume(50);
     player->play();
 
-    // Bouton pour afficher les paroles cliquable
-    ui->paroles->setEnabled(true);
-    ui->paroles->setPalette(QColor(255,255,255,255));
-
-    // Activation de la barre de progression et des boutons de pause
-    ui->pause->setEnabled(true);
-    ui->lecture->setEnabled(true);
-    ui->progressBar->setEnabled(true);
+    activerBoutons(*ui);
 
     // Affichage du titre dans l'ecran
     afficherTitre(ui->richGirl->text().toStdString(), *ui);
@@ -162,4 +155,16 @@ void afficherTitre(string titre, Ui::MainWindow ui)
 
     QString titreConverti = QString::fromStdString(titre);
     ui.titre->setText(titreConverti);
+}
+
+void activerBoutons(Ui::MainWindow ui)
+{
+    // Bouton pour afficher les paroles cliquable
+    ui.paroles->setEnabled(true);
+    ui.paroles->setPalette(QColor(255,255,255,255));
+
+    // Activation de la barre de progression et des boutons de pause
+    ui.pause->setEnabled(true);
+    ui.lecture->setEnabled(true);
+    ui.progressBar->setEnabled(true);
 }
