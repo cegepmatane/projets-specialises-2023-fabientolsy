@@ -17,6 +17,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -34,6 +35,7 @@ public:
     QProgressBar *progressBar;
     QCheckBox *paroles;
     QLabel *titre;
+    QSlider *horizontalSlider;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -76,6 +78,10 @@ public:
         titre->setObjectName("titre");
         titre->setEnabled(false);
         titre->setGeometry(QRect(480, 10, 151, 31));
+        horizontalSlider = new QSlider(centralwidget);
+        horizontalSlider->setObjectName("horizontalSlider");
+        horizontalSlider->setGeometry(QRect(820, 40, 411, 20));
+        horizontalSlider->setOrientation(Qt::Horizontal);
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();
@@ -85,6 +91,7 @@ public:
         progressBar->raise();
         paroles->raise();
         titre->raise();
+        horizontalSlider->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1327, 21));

@@ -139,6 +139,19 @@
      <string/>
     </property>
    </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>40</y>
+      <width>411</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
    <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>
    <zorder>pushButton_2</zorder>
@@ -147,6 +160,7 @@
    <zorder>progressBar</zorder>
    <zorder>paroles</zorder>
    <zorder>titre</zorder>
+   <zorder>horizontalSlider</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

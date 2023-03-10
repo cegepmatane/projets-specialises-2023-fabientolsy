@@ -22,8 +22,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(player,&QMediaPlayer::durationChanged, ui->progressBar, &QProgressBar::setMaximum);
     connect(player,&QMediaPlayer::positionChanged, ui->progressBar, &QProgressBar::setValue);
 
+    connect(player,&QMediaPlayer::durationChanged, ui->horizontalSlider, &QSlider::setMaximum);
+    connect(player,&QMediaPlayer::positionChanged, ui->horizontalSlider, &QSlider::setValue);
+
     ui->progressBar->setRange(0,100);
     ui->progressBar->setValue(0);
+
+    ui->horizontalSlider->setRange(0,100);
+    ui->horizontalSlider->setValue(0);
 }
 
 MainWindow::~MainWindow()
@@ -161,3 +167,9 @@ void activerBoutons(Ui::MainWindow ui)
     ui.lecture->setEnabled(true);
     ui.progressBar->setEnabled(true);
 }
+
+void MainWindow::on_horizontalSlider_sliderMoved(int position)
+{
+    player->setPosition(position);
+}
+
