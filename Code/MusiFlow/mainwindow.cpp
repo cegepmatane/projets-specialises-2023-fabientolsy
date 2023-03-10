@@ -23,10 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(player,&QMediaPlayer::positionChanged, ui->progressBar, &QProgressBar::setValue);
 
     ui->progressBar->setRange(0,100);
-
-    //vw = new QVideoWidget(this);
-    //player->setVideoOutput(vw);
-    //this->setCentralWidget(vw);
+    ui->progressBar->setValue(0);
 }
 
 MainWindow::~MainWindow()
@@ -52,15 +49,11 @@ void MainWindow::on_richGirl_clicked()
     afficherTitre(ui->richGirl->text().toStdString(), *ui);
 }
 
-
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->paroleAffichage->clear();
     player->pause();
 }
-
-
-
 
 void MainWindow::on_paroles_stateChanged(int arg1)
 {
