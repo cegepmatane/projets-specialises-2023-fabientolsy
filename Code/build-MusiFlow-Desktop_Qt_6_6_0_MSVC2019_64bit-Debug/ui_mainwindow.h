@@ -88,6 +88,7 @@ public:
         traduireParoles->setEnabled(false);
         traduireParoles->setGeometry(QRect(280, 10, 93, 26));
         traduireParoles->setMouseTracking(false);
+        traduireParoles->setChecked(false);
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();

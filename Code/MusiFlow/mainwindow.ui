@@ -170,6 +170,9 @@
     <property name="text">
      <string>Traduire</string>
     </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
    </widget>
    <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>

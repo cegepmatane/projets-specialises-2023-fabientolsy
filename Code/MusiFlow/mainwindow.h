@@ -59,10 +59,12 @@ private:
 
     QString const prefix = "../MusiFlow/";
 
+    std::string titreBouton;
+
 };
 
 void afficherTitre(std::string titre, Ui::MainWindow ui);
-void afficherParolesTraduites(std::string titre, Ui::MainWindow ui);
+void afficherParolesTraduites(std::string titre, Ui::MainWindow ui, QString prefix);
 void activerBoutons(Ui::MainWindow ui);
 
 #endif // MAINWINDOW_H
