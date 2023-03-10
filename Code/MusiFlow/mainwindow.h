@@ -57,6 +57,6 @@ private:
 
 };
 
-void afficherTitre(std::string titre);
+void afficherTitre(std::string titre, Ui::MainWindow ui);
 
 #endif // MAINWINDOW_H

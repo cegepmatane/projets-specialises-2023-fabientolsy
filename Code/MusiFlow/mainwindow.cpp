@@ -55,11 +55,8 @@ void MainWindow::on_richGirl_clicked()
     ui->lecture->setEnabled(true);
     ui->progressBar->setEnabled(true);
 
-    // Affichage du tittre de la chanson
-    ui->titre->setEnabled(true);
-    ui->titre->setText(ui->richGirl->text());
-
-    afficherTitre(ui->richGirl->text().toStdString());
+    // Affichage du titre dans l'ecran
+    afficherTitre(ui->richGirl->text().toStdString(), *ui);
 }
 
 
@@ -159,7 +156,10 @@ void MainWindow::on_pause_clicked() { player->pause() ;}
 
 void MainWindow::on_lecture_clicked(){ player->play(); }
 
-void afficherTitre(string titre)
+void afficherTitre(string titre, Ui::MainWindow ui)
 {
     cerr << "Affichage du titre: " + titre;
+
+    QString titreConverti = QString::fromStdString(titre);
+    ui.titre->setText(titreConverti);
 }
