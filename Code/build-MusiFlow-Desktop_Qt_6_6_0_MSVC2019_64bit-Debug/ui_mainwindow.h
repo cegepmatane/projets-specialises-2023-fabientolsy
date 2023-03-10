@@ -36,6 +36,7 @@ public:
     QCheckBox *paroles;
     QLabel *titre;
     QSlider *horizontalSlider;
+    QCheckBox *traduireParoles;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,11 +61,11 @@ public:
         pause = new QPushButton(centralwidget);
         pause->setObjectName("pause");
         pause->setEnabled(false);
-        pause->setGeometry(QRect(290, 10, 83, 29));
+        pause->setGeometry(QRect(380, 10, 83, 29));
         lecture = new QPushButton(centralwidget);
         lecture->setObjectName("lecture");
         lecture->setEnabled(false);
-        lecture->setGeometry(QRect(390, 10, 83, 29));
+        lecture->setGeometry(QRect(480, 10, 83, 29));
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName("progressBar");
         progressBar->setEnabled(false);
@@ -77,11 +78,16 @@ public:
         titre = new QLabel(centralwidget);
         titre->setObjectName("titre");
         titre->setEnabled(false);
-        titre->setGeometry(QRect(480, 10, 151, 31));
+        titre->setGeometry(QRect(570, 10, 151, 31));
         horizontalSlider = new QSlider(centralwidget);
         horizontalSlider->setObjectName("horizontalSlider");
         horizontalSlider->setGeometry(QRect(820, 40, 411, 20));
         horizontalSlider->setOrientation(Qt::Horizontal);
+        traduireParoles = new QCheckBox(centralwidget);
+        traduireParoles->setObjectName("traduireParoles");
+        traduireParoles->setEnabled(false);
+        traduireParoles->setGeometry(QRect(280, 10, 93, 26));
+        traduireParoles->setMouseTracking(false);
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();
@@ -92,6 +98,7 @@ public:
         paroles->raise();
         titre->raise();
         horizontalSlider->raise();
+        traduireParoles->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1327, 21));
@@ -115,6 +122,7 @@ public:
         lecture->setText(QCoreApplication::translate("MainWindow", "Lecture", nullptr));
         paroles->setText(QCoreApplication::translate("MainWindow", "Paroles", nullptr));
         titre->setText(QString());
+        traduireParoles->setText(QCoreApplication::translate("MainWindow", "Traduire", nullptr));
     } // retranslateUi
 
 };

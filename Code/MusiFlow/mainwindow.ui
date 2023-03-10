@@ -65,7 +65,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>380</x>
       <y>10</y>
       <width>83</width>
       <height>29</height>
@@ -81,7 +81,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>480</x>
       <y>10</y>
       <width>83</width>
       <height>29</height>
@@ -129,7 +129,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>570</x>
       <y>10</y>
       <width>151</width>
       <height>31</height>
@@ -152,6 +152,25 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QCheckBox" name="traduireParoles">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>93</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Traduire</string>
+    </property>
+   </widget>
    <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>
    <zorder>pushButton_2</zorder>
@@ -161,6 +180,7 @@
    <zorder>paroles</zorder>
    <zorder>titre</zorder>
    <zorder>horizontalSlider</zorder>
+   <zorder>traduireParoles</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -41,6 +41,8 @@ private slots:
 
     void on_horizontalSlider_sliderMoved(int position);
 
+    void on_traduireParoles_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 
@@ -60,6 +62,7 @@ private:
 };
 
 void afficherTitre(std::string titre, Ui::MainWindow ui);
+void afficherParolesTraduites(std::string titre, Ui::MainWindow ui);
 void activerBoutons(Ui::MainWindow ui);
 
 #endif // MAINWINDOW_H

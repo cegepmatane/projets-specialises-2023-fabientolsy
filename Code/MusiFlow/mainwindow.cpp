@@ -65,6 +65,8 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 {
     cerr << arg1;
 
+    cerr << "On affiche les paroles originales";
+
     string const prefixTraduit = prefix.toStdString();
 
     if(arg1 == 2)
@@ -74,7 +76,7 @@ void MainWindow::on_paroles_stateChanged(int arg1)
         cerr << chanson;
         switch (chanson) {
         case 1:
-            fichier.open(prefixTraduit + "paroles/test.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
+            fichier.open(prefixTraduit + "paroles/originale/richGirl.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
             break;
         }
 
@@ -136,11 +138,27 @@ void MainWindow::on_paroles_stateChanged(int arg1)
         {
             cerr << "Impossible d'ouvrir le fichier";
         }
+
+        ui->traduireParoles->setEnabled(true);
+        ui->traduireParoles->setPalette(QColor(255,255,255,255));
     }
 
     else
     {
         ui->paroleAffichage->clear();
+        ui->traduireParoles->setEnabled(false);
+    }
+}
+
+void MainWindow::on_traduireParoles_stateChanged(int arg1)
+{
+    if(arg1 == 2)
+    {
+        cerr << "On peut traduire";
+    }
+    else
+    {
+        MainWindow::on_paroles_stateChanged(2);
     }
 }
 
@@ -148,12 +166,19 @@ void MainWindow::on_pause_clicked() { player->pause() ;}
 
 void MainWindow::on_lecture_clicked(){ player->play(); }
 
+void MainWindow::on_horizontalSlider_sliderMoved(int position) { player->setPosition(position); }
+
 void afficherTitre(string titre, Ui::MainWindow ui)
 {
     cerr << "Affichage du titre: " + titre;
 
     QString titreConverti = QString::fromStdString(titre);
     ui.titre->setText(titreConverti);
+}
+
+void afficherParolesTraduites(string titre, Ui::MainWindow ui)
+{
+    cerr << "On peut traduire les paroles";
 }
 
 void activerBoutons(Ui::MainWindow ui)
@@ -168,8 +193,6 @@ void activerBoutons(Ui::MainWindow ui)
     ui.progressBar->setEnabled(true);
 }
 
-void MainWindow::on_horizontalSlider_sliderMoved(int position)
-{
-    player->setPosition(position);
-}
+
+
 
