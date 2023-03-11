@@ -41,14 +41,14 @@ static constexpr auto qt_meta_stringdata_MainWindow = QtMocHelpers::stringData(
     "MainWindow",
     "on_richGirl_clicked",
     "",
-    "on_pushButton_2_clicked",
     "on_paroles_stateChanged",
     "arg1",
     "on_pause_clicked",
     "on_lecture_clicked",
     "on_horizontalSlider_sliderMoved",
     "position",
-    "on_traduireParoles_stateChanged"
+    "on_traduireParoles_stateChanged",
+    "on_cantHoldUs_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_MainWindow_t {
@@ -57,13 +57,13 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata1[20];
     char stringdata2[1];
     char stringdata3[24];
-    char stringdata4[24];
-    char stringdata5[5];
-    char stringdata6[17];
-    char stringdata7[19];
-    char stringdata8[32];
-    char stringdata9[9];
-    char stringdata10[32];
+    char stringdata4[5];
+    char stringdata5[17];
+    char stringdata6[19];
+    char stringdata7[32];
+    char stringdata8[9];
+    char stringdata9[32];
+    char stringdata10[22];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -72,26 +72,26 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
         QT_MOC_LITERAL(11, 19),  // "on_richGirl_clicked"
         QT_MOC_LITERAL(31, 0),  // ""
-        QT_MOC_LITERAL(32, 23),  // "on_pushButton_2_clicked"
-        QT_MOC_LITERAL(56, 23),  // "on_paroles_stateChanged"
-        QT_MOC_LITERAL(80, 4),  // "arg1"
-        QT_MOC_LITERAL(85, 16),  // "on_pause_clicked"
-        QT_MOC_LITERAL(102, 18),  // "on_lecture_clicked"
-        QT_MOC_LITERAL(121, 31),  // "on_horizontalSlider_sliderMoved"
-        QT_MOC_LITERAL(153, 8),  // "position"
-        QT_MOC_LITERAL(162, 31)   // "on_traduireParoles_stateChanged"
+        QT_MOC_LITERAL(32, 23),  // "on_paroles_stateChanged"
+        QT_MOC_LITERAL(56, 4),  // "arg1"
+        QT_MOC_LITERAL(61, 16),  // "on_pause_clicked"
+        QT_MOC_LITERAL(78, 18),  // "on_lecture_clicked"
+        QT_MOC_LITERAL(97, 31),  // "on_horizontalSlider_sliderMoved"
+        QT_MOC_LITERAL(129, 8),  // "position"
+        QT_MOC_LITERAL(138, 31),  // "on_traduireParoles_stateChanged"
+        QT_MOC_LITERAL(170, 21)   // "on_cantHoldUs_clicked"
     },
     "MainWindow",
     "on_richGirl_clicked",
     "",
-    "on_pushButton_2_clicked",
     "on_paroles_stateChanged",
     "arg1",
     "on_pause_clicked",
     "on_lecture_clicked",
     "on_horizontalSlider_sliderMoved",
     "position",
-    "on_traduireParoles_stateChanged"
+    "on_traduireParoles_stateChanged",
+    "on_cantHoldUs_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -112,21 +112,21 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   56,    2, 0x08,    1 /* Private */,
-       3,    0,   57,    2, 0x08,    2 /* Private */,
-       4,    1,   58,    2, 0x08,    3 /* Private */,
+       3,    1,   57,    2, 0x08,    2 /* Private */,
+       5,    0,   60,    2, 0x08,    4 /* Private */,
        6,    0,   61,    2, 0x08,    5 /* Private */,
-       7,    0,   62,    2, 0x08,    6 /* Private */,
-       8,    1,   63,    2, 0x08,    7 /* Private */,
-      10,    1,   66,    2, 0x08,    9 /* Private */,
+       7,    1,   62,    2, 0x08,    6 /* Private */,
+       9,    1,   65,    2, 0x08,    8 /* Private */,
+      10,    0,   68,    2, 0x08,   10 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    9,
-    QMetaType::Void, QMetaType::Int,    5,
 
        0        // eod
 };
@@ -142,8 +142,6 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
         // method 'on_richGirl_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_2_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_paroles_stateChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
@@ -156,7 +154,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_traduireParoles_stateChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_cantHoldUs_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -168,12 +168,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->on_richGirl_clicked(); break;
-        case 1: _t->on_pushButton_2_clicked(); break;
-        case 2: _t->on_paroles_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 3: _t->on_pause_clicked(); break;
-        case 4: _t->on_lecture_clicked(); break;
-        case 5: _t->on_horizontalSlider_sliderMoved((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 6: _t->on_traduireParoles_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->on_paroles_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->on_pause_clicked(); break;
+        case 3: _t->on_lecture_clicked(); break;
+        case 4: _t->on_horizontalSlider_sliderMoved((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 5: _t->on_traduireParoles_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 6: _t->on_cantHoldUs_clicked(); break;
         default: ;
         }
     }

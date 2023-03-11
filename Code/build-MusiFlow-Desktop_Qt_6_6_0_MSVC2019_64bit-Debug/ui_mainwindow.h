@@ -29,7 +29,7 @@ public:
     QWidget *centralwidget;
     QPushButton *richGirl;
     QLabel *paroleAffichage;
-    QPushButton *pushButton_2;
+    QPushButton *cantHoldUs;
     QPushButton *pause;
     QPushButton *lecture;
     QProgressBar *progressBar;
@@ -55,9 +55,9 @@ public:
         paroleAffichage->setEnabled(true);
         paroleAffichage->setGeometry(QRect(140, 80, 1161, 741));
         paroleAffichage->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(10, 70, 111, 51));
+        cantHoldUs = new QPushButton(centralwidget);
+        cantHoldUs->setObjectName("cantHoldUs");
+        cantHoldUs->setGeometry(QRect(10, 70, 111, 51));
         pause = new QPushButton(centralwidget);
         pause->setObjectName("pause");
         pause->setEnabled(false);
@@ -92,7 +92,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();
-        pushButton_2->raise();
+        cantHoldUs->raise();
         pause->raise();
         lecture->raise();
         progressBar->raise();
@@ -102,7 +102,7 @@ public:
         traduireParoles->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1327, 21));
+        menubar->setGeometry(QRect(0, 0, 1327, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -118,7 +118,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         richGirl->setText(QCoreApplication::translate("MainWindow", "Rich Girl", nullptr));
         paroleAffichage->setText(QString());
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Hide", nullptr));
+        cantHoldUs->setText(QCoreApplication::translate("MainWindow", "Can't Hold Us", nullptr));
         pause->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
         lecture->setText(QCoreApplication::translate("MainWindow", "Lecture", nullptr));
         paroles->setText(QCoreApplication::translate("MainWindow", "Paroles", nullptr));

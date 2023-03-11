@@ -29,19 +29,17 @@ public:
 private slots:
     void on_richGirl_clicked();
 
-    void on_pushButton_2_clicked();
-
     void on_paroles_stateChanged(int arg1);
 
     void on_pause_clicked();
 
     void on_lecture_clicked();
 
-
-
     void on_horizontalSlider_sliderMoved(int position);
 
     void on_traduireParoles_stateChanged(int arg1);
+
+    void on_cantHoldUs_clicked();
 
 private:
     Ui::MainWindow *ui;

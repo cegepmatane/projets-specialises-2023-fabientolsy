@@ -60,10 +60,19 @@ void MainWindow::on_richGirl_clicked()
 
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_cantHoldUs_clicked()
 {
-    ui->paroleAffichage->clear();
-    player->pause();
+    chanson = 2;
+    titreBouton = "cantHoldUs";
+
+    // LECTURE DU FICHIER AUDIO
+    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+
+    // On rend cliquable les boutons pause/lecture et affichage des paroles
+    activerBoutons(*ui);
+
+    // Affichage du titre dans l'ecran
+    afficherTitre(ui->cantHoldUs->text().toStdString(), *ui);
 }
 
 void MainWindow::on_paroles_stateChanged(int arg1)
@@ -78,6 +87,9 @@ void MainWindow::on_paroles_stateChanged(int arg1)
     {
         switch (chanson) {
             case 1:
+                afficherParoles(titreBouton, *ui, prefixTraduit);
+                break;
+            case 2:
                 afficherParoles(titreBouton, *ui, prefixTraduit);
                 break;
         }
@@ -257,8 +269,3 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
         }
     }
 }
-
-
-
-
-
