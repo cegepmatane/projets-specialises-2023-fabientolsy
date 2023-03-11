@@ -41,20 +41,23 @@ MainWindow::~MainWindow()
 void MainWindow::on_richGirl_clicked()
 {
     chanson = 1;
+    titreBouton = "richGirl";
 
     cerr << chanson;
 
     // LECTURE DU FICHIER AUDIO
-    player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
+    /*player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
     audio->setVolume(50);
-    player->play();
+    player->play();*/
+
+    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     activerBoutons(*ui);
 
     // Affichage du titre dans l'ecran
     afficherTitre(ui->richGirl->text().toStdString(), *ui);
-    titreBouton = "richGirl";
+
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -120,6 +123,12 @@ void afficherTitre(string titre, Ui::MainWindow ui)
 
 }
 
+void lectureMusique(QString titre, QString prefix, QMediaPlayer* player, QAudioOutput* audio)
+{
+    player->setSource(QUrl::fromLocalFile(prefix + "chansons/" + titre + ".mp3"));
+    audio->setVolume(50);
+    player->play();
+}
 void activerBoutons(Ui::MainWindow ui)
 {
     // Bouton pour afficher les paroles cliquable

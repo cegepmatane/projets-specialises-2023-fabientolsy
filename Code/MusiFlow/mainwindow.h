@@ -63,6 +63,7 @@ private:
 
 };
 
+void lectureMusique(QString titre, QString prefix, QMediaPlayer* player, QAudioOutput* audio);
 void afficherTitre(std::string titre, Ui::MainWindow ui);
 void afficherParoles(std::string titre, Ui::MainWindow, std::string prefix);
 void afficherParolesTraduites(std::string titre, Ui::MainWindow ui, QString prefix);
