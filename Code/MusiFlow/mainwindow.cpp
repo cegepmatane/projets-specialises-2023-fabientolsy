@@ -49,6 +49,7 @@ void MainWindow::on_richGirl_clicked()
     audio->setVolume(50);
     player->play();
 
+    // On rend cliquable les boutons pause/lecture et affichage des paroles
     activerBoutons(*ui);
 
     // Affichage du titre dans l'ecran
@@ -72,72 +73,10 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 
     if(arg1 == 2)
     {
-        ifstream fichier;
-
-        cerr << chanson;
         switch (chanson) {
-        case 1:
-            fichier.open(prefixTraduit + "paroles/originale/richGirl.txt", ios::in); // OUVVERTURE DU FICHIER TXT OU IL Y A LES PAROLES
-            break;
-        }
-
-
-        list<string> listeParoles;
-        string parole = " "; // VARIABLE OU IL Y A LES PAROLES
-
-        if(fichier) // SI ON REUSSIT A OUVRIR LE FICHIER TEXT
-        {
-            cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
-
-            ui->paroleAffichage->clear();
-
-            list<string>::iterator it = listeParoles.begin();
-            int compteurMot = 0;
-
-            for(string s; fichier >> s;)
-            {
-                parole = s + ' ';
-                //cerr << parole;
-                listeParoles.insert(it, parole);
-
-            }
-
-            if(listeParoles.empty())
-            {
-                cerr << "Liste vide !";
-            }
-            else
-            {
-                cerr << "Acces a la liste: ";
-
-                for(string paroles : listeParoles)
-                {
-                    cerr << paroles;
-
-                    QString affichage = QString::fromStdString(paroles);
-                    //string valeurparoleAffichage = ui->paroleAffichage->text().toStdString();
-                    //cerr << valeurparoleAffichage;
-                    QString valeurparoleAffichage = ui->paroleAffichage->text();
-
-                    if(compteurMot < 30)
-                    {
-                        ui->paroleAffichage->setText(valeurparoleAffichage + " " + affichage);
-
-                        compteurMot = compteurMot + 1;
-                    }
-                    else
-                    {
-                        ui->paroleAffichage->setText(valeurparoleAffichage + '\n' + affichage);
-                        compteurMot = 1;
-                    }
-
-                }
-            }
-        }
-
-        else
-        {
-            cerr << "Impossible d'ouvrir le fichier";
+            case 1:
+                afficherParoles(titreBouton, *ui, prefixTraduit);
+                break;
         }
 
         ui->traduireParoles->setEnabled(true);
@@ -181,6 +120,76 @@ void afficherTitre(string titre, Ui::MainWindow ui)
 
 }
 
+void activerBoutons(Ui::MainWindow ui)
+{
+    // Bouton pour afficher les paroles cliquable
+    ui.paroles->setEnabled(true);
+    ui.paroles->setPalette(QColor(255,255,255,255));
+
+    // Activation de la barre de progression et des boutons de pause
+    ui.pause->setEnabled(true);
+    ui.lecture->setEnabled(true);
+    ui.progressBar->setEnabled(true);
+}
+
+void afficherParoles(string titre, Ui::MainWindow ui, string prefix)
+{
+    cerr << "On peut afficher les paroles";
+
+    ifstream fichier;
+    fichier.open(prefix + "paroles/originale/" + titre + ".txt", ios::in);
+
+    list<string> listeParoles;
+    string parole = " "; // VARIABLE OU IL Y A LES PAROLES
+
+    if(fichier) // SI ON REUSSIT A OUVRIR LE FICHIER TEXT
+    {
+        cerr << "Fichier ouvert"; // ONAFFICHE DANS LA CONSOLE LA REUSSITE D'OUVERTURE
+
+        ui.paroleAffichage->clear();
+
+        list<string>::iterator it = listeParoles.begin();
+        int compteurMot = 0;
+
+        for(string s; fichier >> s;)
+        {
+            parole = s + ' ';
+
+            listeParoles.insert(it, parole);
+        }
+
+        if(listeParoles.empty())
+        {
+            cerr << "Liste vide !";
+        }
+        else
+        {
+            cerr << "Acces a la liste: ";
+
+            for(string paroles : listeParoles)
+            {
+                cerr << paroles;
+
+                QString affichage = QString::fromStdString(paroles);
+                QString valeurparoleAffichage = ui.paroleAffichage->text();
+
+                if(compteurMot < 30)
+                {
+                    ui.paroleAffichage->setText(valeurparoleAffichage + " " + affichage);
+
+                    compteurMot = compteurMot + 1;
+                }
+                else
+                {
+                    ui.paroleAffichage->setText(valeurparoleAffichage + '\n' + affichage);
+                    compteurMot = 1;
+                }
+
+            }
+        }
+   }
+}
+
 void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
 {
     cerr << "On peut traduire les paroles";
@@ -204,9 +213,8 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
         for(string s; fichier >> s;)
         {
             parole = s + ' ';
-            //cerr << parole;
-            listeParoles.insert(it, parole);
 
+            listeParoles.insert(it, parole);
         }
 
         if(listeParoles.empty())
@@ -222,8 +230,6 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
                 cerr << paroles;
 
                 QString affichage = QString::fromStdString(paroles);
-                //string valeurparoleAffichage = ui->paroleAffichage->text().toStdString();
-                //cerr << valeurparoleAffichage;
                 QString valeurparoleAffichage = ui.paroleAffichage->text();
 
                 if(compteurMot < 30)
@@ -243,17 +249,6 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
     }
 }
 
-void activerBoutons(Ui::MainWindow ui)
-{
-    // Bouton pour afficher les paroles cliquable
-    ui.paroles->setEnabled(true);
-    ui.paroles->setPalette(QColor(255,255,255,255));
-
-    // Activation de la barre de progression et des boutons de pause
-    ui.pause->setEnabled(true);
-    ui.lecture->setEnabled(true);
-    ui.progressBar->setEnabled(true);
-}
 
 
 

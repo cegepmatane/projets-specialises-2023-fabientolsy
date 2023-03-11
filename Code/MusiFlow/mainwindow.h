@@ -64,6 +64,7 @@ private:
 };
 
 void afficherTitre(std::string titre, Ui::MainWindow ui);
+void afficherParoles(std::string titre, Ui::MainWindow, std::string prefix);
 void afficherParolesTraduites(std::string titre, Ui::MainWindow ui, QString prefix);
 void activerBoutons(Ui::MainWindow ui);
 
