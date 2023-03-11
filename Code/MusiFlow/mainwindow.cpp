@@ -53,7 +53,8 @@ void MainWindow::on_richGirl_clicked()
     lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
-    activerBoutons(*ui);
+    //activerBoutons(*ui);
+    changementChanson(*ui);
 
     // Affichage du titre dans l'ecran
     afficherTitre(ui->richGirl->text().toStdString(), *ui);
@@ -69,7 +70,8 @@ void MainWindow::on_cantHoldUs_clicked()
     lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
-    activerBoutons(*ui);
+    //activerBoutons(*ui);
+    changementChanson(*ui);
 
     // Affichage du titre dans l'ecran
     afficherTitre(ui->cantHoldUs->text().toStdString(), *ui);
@@ -141,6 +143,13 @@ void lectureMusique(QString titre, QString prefix, QMediaPlayer* player, QAudioO
     audio->setVolume(50);
     player->play();
 }
+
+void changementChanson(Ui::MainWindow ui)
+{
+    desactiverBouton(ui);
+    activerBoutons(ui);
+}
+
 void activerBoutons(Ui::MainWindow ui)
 {
     // Bouton pour afficher les paroles cliquable
@@ -151,6 +160,19 @@ void activerBoutons(Ui::MainWindow ui)
     ui.pause->setEnabled(true);
     ui.lecture->setEnabled(true);
     ui.progressBar->setEnabled(true);
+}
+
+void desactiverBouton(Ui::MainWindow ui)
+{
+    ui.paroles->setCheckState(Qt::Unchecked);
+    ui.traduireParoles->setCheckState(Qt::Unchecked);
+    // Bouton pour afficher les paroles cliquable
+    ui.paroles->setEnabled(false);
+
+    // Activation de la barre de progression et des boutons de pause
+    ui.pause->setEnabled(false);
+    ui.lecture->setEnabled(false);
+    ui.progressBar->setEnabled(false);
 }
 
 void afficherParoles(string titre, Ui::MainWindow ui, string prefix)

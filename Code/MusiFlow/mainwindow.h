@@ -65,6 +65,8 @@ void lectureMusique(QString titre, QString prefix, QMediaPlayer* player, QAudioO
 void afficherTitre(std::string titre, Ui::MainWindow ui);
 void afficherParoles(std::string titre, Ui::MainWindow, std::string prefix);
 void afficherParolesTraduites(std::string titre, Ui::MainWindow ui, QString prefix);
+void changementChanson(Ui::MainWindow ui);
 void activerBoutons(Ui::MainWindow ui);
+void desactiverBouton(Ui::MainWindow ui);
 
 #endif // MAINWINDOW_H
