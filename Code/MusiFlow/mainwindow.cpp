@@ -40,10 +40,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_richGirl_clicked()
 {
-    chanson = 1;
     titreBouton = "richGirl";
-
-    cerr << chanson;
 
     // LECTURE DU FICHIER AUDIO
     /*player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
@@ -63,7 +60,6 @@ void MainWindow::on_richGirl_clicked()
 
 void MainWindow::on_cantHoldUs_clicked()
 {
-    chanson = 2;
     titreBouton = "cantHoldUs";
 
     // LECTURE DU FICHIER AUDIO
@@ -79,7 +75,6 @@ void MainWindow::on_cantHoldUs_clicked()
 
 void MainWindow::on_onVerra_clicked()
 {
-    chanson = 3;
     titreBouton = "onVerra";
 
     // LECTURE DU FICHIER AUDIO
@@ -103,14 +98,7 @@ void MainWindow::on_paroles_stateChanged(int arg1)
 
     if(arg1 == 2)
     {
-        switch (chanson) {
-            case 1:
-                afficherParoles(titreBouton, *ui, prefixTraduit);
-                break;
-            case 2:
-                afficherParoles(titreBouton, *ui, prefixTraduit);
-                break;
-        }
+        afficherParoles(titreBouton, *ui, prefixTraduit);
 
         ui->traduireParoles->setEnabled(true);
         ui->traduireParoles->setPalette(QColor(255,255,255,255));

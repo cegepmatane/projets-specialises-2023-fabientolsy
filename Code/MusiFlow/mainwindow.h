@@ -55,8 +55,6 @@ private:
 
     QVideoWidget* vw;
 
-    int chanson;
-
     QString const prefix = "../MusiFlow/";
 
     std::string titreBouton;
