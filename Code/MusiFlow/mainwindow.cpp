@@ -77,6 +77,22 @@ void MainWindow::on_cantHoldUs_clicked()
     afficherTitre(ui->cantHoldUs->text().toStdString(), *ui);
 }
 
+void MainWindow::on_onVerra_clicked()
+{
+    chanson = 3;
+    titreBouton = "onVerra";
+
+    // LECTURE DU FICHIER AUDIO
+    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+
+    // On rend cliquable les boutons pause/lecture et affichage des paroles
+    //activerBoutons(*ui);
+    changementChanson(*ui);
+
+    // Affichage du titre dans l'ecran
+    afficherTitre(ui->onVerra->text().toStdString(), *ui);
+}
+
 void MainWindow::on_paroles_stateChanged(int arg1)
 {
     cerr << arg1;
@@ -291,3 +307,6 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
         }
     }
 }
+
+
+

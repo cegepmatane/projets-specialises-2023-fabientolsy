@@ -41,6 +41,8 @@ private slots:
 
     void on_cantHoldUs_clicked();
 
+    void on_onVerra_clicked();
+
 private:
     Ui::MainWindow *ui;
 

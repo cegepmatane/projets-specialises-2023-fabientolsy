@@ -174,6 +174,19 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="onVerra">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>On verra</string>
+    </property>
+   </widget>
    <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>
    <zorder>cantHoldUs</zorder>
@@ -184,6 +197,7 @@
    <zorder>titre</zorder>
    <zorder>horizontalSlider</zorder>
    <zorder>traduireParoles</zorder>
+   <zorder>onVerra</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
