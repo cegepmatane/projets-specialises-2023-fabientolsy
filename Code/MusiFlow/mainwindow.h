@@ -43,6 +43,8 @@ private slots:
 
     void on_onVerra_clicked();
 
+    void on_astronaute_clicked();
+
 private:
     Ui::MainWindow *ui;
 

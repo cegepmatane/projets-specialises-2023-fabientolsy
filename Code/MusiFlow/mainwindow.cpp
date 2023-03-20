@@ -88,6 +88,20 @@ void MainWindow::on_onVerra_clicked()
     afficherTitre(ui->onVerra->text().toStdString(), *ui);
 }
 
+void MainWindow::on_astronaute_clicked()
+{
+    titreBouton = "astronaute";
+
+    // LECTURE DU FICHIER AUDIO
+    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+
+    // On rend cliquable les boutons pause/lecture et affichage des paroles
+    changementChanson(*ui);
+
+    // Affichage du titre dans l'ecran
+    afficherTitre(ui->astronaute->text().toStdString(), *ui);
+}
+
 void MainWindow::on_paroles_stateChanged(int arg1)
 {
     cerr << arg1;
@@ -295,6 +309,8 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
         }
     }
 }
+
+
 
 
 

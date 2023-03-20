@@ -38,6 +38,7 @@ public:
     QSlider *horizontalSlider;
     QCheckBox *traduireParoles;
     QPushButton *onVerra;
+    QPushButton *astronaute;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -93,6 +94,9 @@ public:
         onVerra = new QPushButton(centralwidget);
         onVerra->setObjectName("onVerra");
         onVerra->setGeometry(QRect(10, 130, 111, 51));
+        astronaute = new QPushButton(centralwidget);
+        astronaute->setObjectName("astronaute");
+        astronaute->setGeometry(QRect(10, 190, 111, 51));
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();
@@ -105,6 +109,7 @@ public:
         horizontalSlider->raise();
         traduireParoles->raise();
         onVerra->raise();
+        astronaute->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1327, 25));
@@ -130,6 +135,7 @@ public:
         titre->setText(QString());
         traduireParoles->setText(QCoreApplication::translate("MainWindow", "Traduire", nullptr));
         onVerra->setText(QCoreApplication::translate("MainWindow", "On verra", nullptr));
+        astronaute->setText(QCoreApplication::translate("MainWindow", "Astronaute", nullptr));
     } // retranslateUi
 
 };
