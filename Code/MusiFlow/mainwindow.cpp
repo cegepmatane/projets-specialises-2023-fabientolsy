@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);    
 
     player = new QMediaPlayer(this);
 
@@ -47,7 +47,7 @@ void MainWindow::on_richGirl_clicked()
     audio->setVolume(50);
     player->play();*/
 
-    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+    lectureMusique(QString::fromStdString(titreBouton), player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     //activerBoutons(*ui);
@@ -63,7 +63,7 @@ void MainWindow::on_cantHoldUs_clicked()
     titreBouton = "cantHoldUs";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+    lectureMusique(QString::fromStdString(titreBouton),  player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     //activerBoutons(*ui);
@@ -78,7 +78,7 @@ void MainWindow::on_onVerra_clicked()
     titreBouton = "onVerra";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+    lectureMusique(QString::fromStdString(titreBouton),  player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     //activerBoutons(*ui);
@@ -93,7 +93,7 @@ void MainWindow::on_astronaute_clicked()
     titreBouton = "astronaute";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton), prefix, player, audio);
+    lectureMusique(QString::fromStdString(titreBouton),  player, audio);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     changementChanson(*ui);
@@ -102,17 +102,31 @@ void MainWindow::on_astronaute_clicked()
     afficherTitre(ui->astronaute->text().toStdString(), *ui);
 }
 
+
+void MainWindow::on_superman_clicked()
+{
+    titreBouton = "superman";
+
+    // LECTURE DU FICHIER AUDIO
+    lectureMusique(QString::fromStdString(titreBouton), player, audio);
+
+    // On rend cliquable les boutons pause/lecture et affichage des paroles
+    changementChanson(*ui);
+
+    // Affichage du titre dans l'ecran
+    afficherTitre(ui->superman->text().toStdString(), *ui);
+}
+
 void MainWindow::on_paroles_stateChanged(int arg1)
 {
     cerr << arg1;
 
     cerr << "On affiche les paroles originales";
 
-    string const prefixTraduit = prefix.toStdString();
 
     if(arg1 == 2)
     {
-        afficherParoles(titreBouton, *ui, prefixTraduit);
+        afficherParoles(titreBouton, *ui);
 
         ui->traduireParoles->setEnabled(true);
         ui->traduireParoles->setPalette(QColor(255,255,255,255));
@@ -131,7 +145,7 @@ void MainWindow::on_traduireParoles_stateChanged(int arg1)
     if(arg1 == 2)
     {
         cerr << "On peut traduire";
-        afficherParolesTraduites(titreBouton, *ui, prefix);
+        afficherParolesTraduites(titreBouton, *ui);
     }
     else
     {
@@ -155,10 +169,10 @@ void afficherTitre(string titre, Ui::MainWindow ui)
 
 }
 
-void lectureMusique(QString titre, QString prefix, QMediaPlayer* player, QAudioOutput* audio)
+void lectureMusique(QString titre, QMediaPlayer* player, QAudioOutput* audio)
 {
-    player->setSource(QUrl::fromLocalFile(prefix + "chansons/" + titre + ".mp3"));
-    audio->setVolume(50);
+    player->setSource(QUrl::fromLocalFile("chansons/" + titre + ".mp3"));
+    audio->setVolume(100);
     player->play();
 }
 
@@ -190,15 +204,15 @@ void desactiverBouton(Ui::MainWindow ui)
     // Activation de la barre de progression et des boutons de pause
     ui.pause->setEnabled(false);
     ui.lecture->setEnabled(false);
-    ui.progressBar->setEnabled(false);
+    //ui.progressBar->setEnabled(false);
 }
 
-void afficherParoles(string titre, Ui::MainWindow ui, string prefix)
+void afficherParoles(string titre, Ui::MainWindow ui)
 {
     cerr << "On peut afficher les paroles";
 
     ifstream fichier;
-    fichier.open(prefix + "paroles/originale/" + titre + ".txt", ios::in);
+    fichier.open("paroles/originale/" + titre + ".txt", ios::in);
 
     list<string> listeParoles;
     string parole = " "; // VARIABLE OU IL Y A LES PAROLES
@@ -251,13 +265,13 @@ void afficherParoles(string titre, Ui::MainWindow ui, string prefix)
    }
 }
 
-void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
+void afficherParolesTraduites(string titre, Ui::MainWindow ui)
 {
     cerr << "On peut traduire les paroles";
 
     ifstream fichier;
-    string const prefixTraduit = prefix.toStdString();
-    fichier.open(prefixTraduit + "paroles/traduire/" + titre + ".txt", ios::in);
+
+    fichier.open( "paroles/traduire/" + titre + ".txt", ios::in);
 
     list<string> listeParoles;
     string parole = " "; // VARIABLE OU IL Y A LES PAROLES
@@ -309,8 +323,3 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui, QString prefix)
         }
     }
 }
-
-
-
-
-

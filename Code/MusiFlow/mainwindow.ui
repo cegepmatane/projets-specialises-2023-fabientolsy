@@ -91,22 +91,6 @@
      <string>Lecture</string>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>820</x>
-      <y>10</y>
-      <width>451</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
    <widget class="QCheckBox" name="paroles">
     <property name="enabled">
      <bool>false</bool>
@@ -142,7 +126,7 @@
    <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>820</x>
+      <x>830</x>
       <y>40</y>
       <width>411</width>
       <height>20</height>
@@ -200,18 +184,45 @@
      <string>Astronaute</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="superman">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Superman</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>837</x>
+      <y>10</y>
+      <width>441</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
    <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>
    <zorder>cantHoldUs</zorder>
    <zorder>pause</zorder>
    <zorder>lecture</zorder>
-   <zorder>progressBar</zorder>
    <zorder>paroles</zorder>
    <zorder>titre</zorder>
    <zorder>horizontalSlider</zorder>
    <zorder>traduireParoles</zorder>
    <zorder>onVerra</zorder>
    <zorder>astronaute</zorder>
+   <zorder>superman</zorder>
+   <zorder>progressBar</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

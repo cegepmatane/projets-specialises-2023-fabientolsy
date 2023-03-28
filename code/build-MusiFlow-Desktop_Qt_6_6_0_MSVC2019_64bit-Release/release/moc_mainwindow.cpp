@@ -7,6 +7,10 @@
 *****************************************************************************/
 
 #include "../../MusiFlow/mainwindow.h"
+#include <QtGui/qtextcursor.h>
+#include <QScreen>
+#include <QtNetwork/QSslPreSharedKeyAuthenticator>
+#include <QtNetwork/QSslError>
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -50,11 +54,12 @@ static constexpr auto qt_meta_stringdata_MainWindow = QtMocHelpers::stringData(
     "on_traduireParoles_stateChanged",
     "on_cantHoldUs_clicked",
     "on_onVerra_clicked",
-    "on_astronaute_clicked"
+    "on_astronaute_clicked",
+    "on_superman_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[26];
+    uint offsetsAndSizes[28];
     char stringdata0[11];
     char stringdata1[20];
     char stringdata2[1];
@@ -68,6 +73,7 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata10[22];
     char stringdata11[19];
     char stringdata12[22];
+    char stringdata13[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -85,7 +91,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(138, 31),  // "on_traduireParoles_stateChanged"
         QT_MOC_LITERAL(170, 21),  // "on_cantHoldUs_clicked"
         QT_MOC_LITERAL(192, 18),  // "on_onVerra_clicked"
-        QT_MOC_LITERAL(211, 21)   // "on_astronaute_clicked"
+        QT_MOC_LITERAL(211, 21),  // "on_astronaute_clicked"
+        QT_MOC_LITERAL(233, 19)   // "on_superman_clicked"
     },
     "MainWindow",
     "on_richGirl_clicked",
@@ -99,7 +106,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "on_traduireParoles_stateChanged",
     "on_cantHoldUs_clicked",
     "on_onVerra_clicked",
-    "on_astronaute_clicked"
+    "on_astronaute_clicked",
+    "on_superman_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -111,7 +119,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -119,15 +127,16 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   68,    2, 0x08,    1 /* Private */,
-       3,    1,   69,    2, 0x08,    2 /* Private */,
-       5,    0,   72,    2, 0x08,    4 /* Private */,
-       6,    0,   73,    2, 0x08,    5 /* Private */,
-       7,    1,   74,    2, 0x08,    6 /* Private */,
-       9,    1,   77,    2, 0x08,    8 /* Private */,
-      10,    0,   80,    2, 0x08,   10 /* Private */,
-      11,    0,   81,    2, 0x08,   11 /* Private */,
-      12,    0,   82,    2, 0x08,   12 /* Private */,
+       1,    0,   74,    2, 0x08,    1 /* Private */,
+       3,    1,   75,    2, 0x08,    2 /* Private */,
+       5,    0,   78,    2, 0x08,    4 /* Private */,
+       6,    0,   79,    2, 0x08,    5 /* Private */,
+       7,    1,   80,    2, 0x08,    6 /* Private */,
+       9,    1,   83,    2, 0x08,    8 /* Private */,
+      10,    0,   86,    2, 0x08,   10 /* Private */,
+      11,    0,   87,    2, 0x08,   11 /* Private */,
+      12,    0,   88,    2, 0x08,   12 /* Private */,
+      13,    0,   89,    2, 0x08,   13 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -136,6 +145,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -172,6 +182,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_onVerra_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_astronaute_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_superman_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -192,6 +204,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->on_cantHoldUs_clicked(); break;
         case 7: _t->on_onVerra_clicked(); break;
         case 8: _t->on_astronaute_clicked(); break;
+        case 9: _t->on_superman_clicked(); break;
         default: ;
         }
     }
@@ -216,13 +229,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }
