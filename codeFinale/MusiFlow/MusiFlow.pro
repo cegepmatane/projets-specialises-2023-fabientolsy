@@ -1,6 +1,6 @@
-QT       += core gui widgets multimedia multimediawidgets
+QT       += core gui widgets multimedia multimediawidgets sql
 
-greaterThan(QT_MAJOR_VERSION, 6): QT +=  widgets multimedia multimediawidgets
+greaterThan(QT_MAJOR_VERSION, 6): QT += widgets multimedia multimediawidgets sql
 
 CONFIG += c++17
 
@@ -13,6 +13,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    connexion.h \
     mainwindow.h
 
 FORMS += \
