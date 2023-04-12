@@ -1,7 +1,6 @@
-QT       += core gui widgets multimedia multimediawidgets sql
+QT       += core gui widgets multimedia multimediawidgets
 
-greaterThan(QT_MAJOR_VERSION, 6): QT += widgets multimedia multimediawidgets sql
-
+greaterThan(QT_MAJOR_VERSION, 6): QT += widgets multimedia multimediawidgets
 CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -13,7 +12,6 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
-    connexion.h \
     mainwindow.h
 
 FORMS += \

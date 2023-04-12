@@ -1,5 +1,4 @@
 ﻿#include "mainwindow.h"
-#include "connexion.h"
 #include "ui_mainwindow.h"
 #include "fstream"
 #include "string"
@@ -16,25 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     player = new QMediaPlayer(this);
 
     audio = new QAudioOutput;
-
-    // CONNEXION A LA BASE DE DONNEES   
-    /*QSqlDatabase db = QSqlDatabase::addDatabase("MYSQL");
-    db.setHostName("51.79.67.33");
-    db.setUserName("fabien");
-    db.setPassword("lay87%$hrw");
-    db.setDatabaseName("test");
-
-    if(db.open())
-    {
-        cerr << "Connexion DB OK";
-    }
-    else
-    {
-        cerr << "Probleme connexion DB";
-    }*/
-
-    bool reponse = connexionDB();
-    cerr << "Reponse SQL = " << reponse;
 
     // DECLARATION DE LA SORTIE DE SON
     player->setAudioOutput(audio);
