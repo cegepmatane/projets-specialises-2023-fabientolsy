@@ -57,7 +57,7 @@ public:
         paroleAffichage = new QLabel(centralwidget);
         paroleAffichage->setObjectName("paroleAffichage");
         paroleAffichage->setEnabled(true);
-        paroleAffichage->setGeometry(QRect(200, 80, 1101, 741));
+        paroleAffichage->setGeometry(QRect(170, 80, 1181, 741));
         paroleAffichage->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
         cantHoldUs = new QPushButton(centralwidget);
         cantHoldUs->setObjectName("cantHoldUs");
@@ -103,7 +103,7 @@ public:
         progressBar->setValue(24);
         pochette = new QLabel(centralwidget);
         pochette->setObjectName("pochette");
-        pochette->setGeometry(QRect(10, 400, 131, 131));
+        pochette->setGeometry(QRect(10, 410, 150, 150));
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();

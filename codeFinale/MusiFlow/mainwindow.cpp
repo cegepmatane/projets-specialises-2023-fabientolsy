@@ -181,7 +181,7 @@ void lectureMusique(QString titre, QMediaPlayer* player, QAudioOutput* audio, Ui
     player->play();
 
     QPixmap pochette("pochettes/" + titre + ".jpg");
-    ui.pochette->setPixmap(pochette);
+    ui.pochette->setPixmap(pochette.scaled(ui.pochette->geometry().height(), ui.pochette->geometry().width(), Qt::KeepAspectRatio));
 }
 
 void changementChanson(Ui::MainWindow ui)
