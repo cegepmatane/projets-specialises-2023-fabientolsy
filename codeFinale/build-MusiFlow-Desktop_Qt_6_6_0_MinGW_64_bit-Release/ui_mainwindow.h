@@ -57,7 +57,7 @@ public:
         paroleAffichage = new QLabel(centralwidget);
         paroleAffichage->setObjectName("paroleAffichage");
         paroleAffichage->setEnabled(true);
-        paroleAffichage->setGeometry(QRect(170, 80, 1181, 741));
+        paroleAffichage->setGeometry(QRect(170, 110, 1181, 671));
         paroleAffichage->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
         cantHoldUs = new QPushButton(centralwidget);
         cantHoldUs->setObjectName("cantHoldUs");
