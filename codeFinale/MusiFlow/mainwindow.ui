@@ -33,9 +33,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>200</x>
       <y>80</y>
-      <width>1161</width>
+      <width>1101</width>
       <height>741</height>
      </rect>
     </property>
@@ -210,6 +210,19 @@
      <number>24</number>
     </property>
    </widget>
+   <widget class="QLabel" name="pochette">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>131</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>paroleAffichage</zorder>
    <zorder>richGirl</zorder>
    <zorder>cantHoldUs</zorder>
@@ -223,6 +236,7 @@
    <zorder>astronaute</zorder>
    <zorder>superman</zorder>
    <zorder>progressBar</zorder>
+   <zorder>pochette</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -230,7 +244,7 @@
      <x>0</x>
      <y>0</y>
      <width>1327</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

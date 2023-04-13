@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "fstream"
 #include "string"
+#include "QPixmap""
 #include "iostream"
 
 using namespace std;
@@ -51,7 +52,7 @@ void MainWindow::on_richGirl_clicked()
     audio->setVolume(50);
     player->play();*/
 
-    lectureMusique(QString::fromStdString(titreBouton), player, audio);
+    lectureMusique(QString::fromStdString(titreBouton), player, audio, *ui);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     //activerBoutons(*ui);
@@ -67,7 +68,7 @@ void MainWindow::on_cantHoldUs_clicked()
     titreBouton = "cantHoldUs";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton),  player, audio);
+    lectureMusique(QString::fromStdString(titreBouton),  player, audio, *ui);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     //activerBoutons(*ui);
@@ -82,7 +83,7 @@ void MainWindow::on_onVerra_clicked()
     titreBouton = "onVerra";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton),  player, audio);
+    lectureMusique(QString::fromStdString(titreBouton),  player, audio, *ui);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     //activerBoutons(*ui);
@@ -97,7 +98,7 @@ void MainWindow::on_astronaute_clicked()
     titreBouton = "astronaute";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton),  player, audio);
+    lectureMusique(QString::fromStdString(titreBouton),  player, audio, *ui);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     changementChanson(*ui);
@@ -112,7 +113,7 @@ void MainWindow::on_superman_clicked()
     titreBouton = "superman";
 
     // LECTURE DU FICHIER AUDIO
-    lectureMusique(QString::fromStdString(titreBouton), player, audio);
+    lectureMusique(QString::fromStdString(titreBouton), player, audio, *ui);
 
     // On rend cliquable les boutons pause/lecture et affichage des paroles
     changementChanson(*ui);
@@ -173,11 +174,14 @@ void afficherTitre(string titre, Ui::MainWindow ui)
 
 }
 
-void lectureMusique(QString titre, QMediaPlayer* player, QAudioOutput* audio)
+void lectureMusique(QString titre, QMediaPlayer* player, QAudioOutput* audio, Ui::MainWindow ui)
 {
     player->setSource(QUrl::fromLocalFile("chansons/" + titre + ".mp3"));
     audio->setVolume(100);
     player->play();
+
+    QPixmap pochette("pochettes/" + titre + ".jpg");
+    ui.pochette->setPixmap(pochette);
 }
 
 void changementChanson(Ui::MainWindow ui)

@@ -40,6 +40,7 @@ public:
     QPushButton *astronaute;
     QPushButton *superman;
     QProgressBar *progressBar;
+    QLabel *pochette;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -56,7 +57,7 @@ public:
         paroleAffichage = new QLabel(centralwidget);
         paroleAffichage->setObjectName("paroleAffichage");
         paroleAffichage->setEnabled(true);
-        paroleAffichage->setGeometry(QRect(140, 80, 1161, 741));
+        paroleAffichage->setGeometry(QRect(200, 80, 1101, 741));
         paroleAffichage->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
         cantHoldUs = new QPushButton(centralwidget);
         cantHoldUs->setObjectName("cantHoldUs");
@@ -100,6 +101,9 @@ public:
         progressBar->setObjectName("progressBar");
         progressBar->setGeometry(QRect(837, 10, 441, 23));
         progressBar->setValue(24);
+        pochette = new QLabel(centralwidget);
+        pochette->setObjectName("pochette");
+        pochette->setGeometry(QRect(10, 400, 131, 131));
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();
@@ -114,9 +118,10 @@ public:
         astronaute->raise();
         superman->raise();
         progressBar->raise();
+        pochette->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1327, 25));
+        menubar->setGeometry(QRect(0, 0, 1327, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -141,6 +146,7 @@ public:
         onVerra->setText(QCoreApplication::translate("MainWindow", "On verra", nullptr));
         astronaute->setText(QCoreApplication::translate("MainWindow", "Astronaute", nullptr));
         superman->setText(QCoreApplication::translate("MainWindow", "Superman", nullptr));
+        pochette->setText(QString());
     } // retranslateUi
 
 };
