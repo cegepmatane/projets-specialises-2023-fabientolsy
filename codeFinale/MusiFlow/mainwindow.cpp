@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setWindowIcon(QIcon("logo/logo.png"));
+
     player = new QMediaPlayer(this);
 
     audio = new QAudioOutput;
