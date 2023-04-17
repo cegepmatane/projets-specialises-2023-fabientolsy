@@ -345,8 +345,6 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui)
 
 void MainWindow::on_precedent_clicked()
 {
-    cerr << "id";
-
     QString chanson;
     string titre;
 
@@ -403,6 +401,56 @@ void MainWindow::on_precedent_clicked()
 
 void MainWindow::on_suivant_clicked()
 {
+    QString chanson;
+    string titre;
 
+
+    switch (id) {
+    case 0:
+        id = 1;
+        titreBouton = "cantHoldUs";
+
+        chanson = "cantHoldUs";
+        titre = "Can't Hold Us";
+        break;
+
+    case 1:
+        id = 2;
+        titreBouton = "onVerra";
+
+        chanson = "onVerra";
+        titre = "On Verra";
+        break;
+
+    case 2:
+        id = 3;
+        titreBouton = "astronaute";
+
+        chanson = "astronaute";
+        titre = "Astronaute";
+        break;
+
+    case 3:
+        id = 4;
+        titreBouton = "superman";
+
+        chanson = "superman";
+        titre = "Superman";
+        break;
+
+    case 4:
+        id = 3;
+        titreBouton = "richGirl";
+        chanson = "richGirl";
+        titre = "Rich Girl";
+        break;
+
+    default:
+        break;
+    }
+
+    lectureMusique(chanson, player, audio, *ui);
+    changementChanson(*ui);
+    afficherTitre(titre, *ui);
 }
 
