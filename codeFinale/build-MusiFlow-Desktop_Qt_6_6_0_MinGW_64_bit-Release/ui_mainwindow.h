@@ -41,6 +41,8 @@ public:
     QPushButton *superman;
     QProgressBar *progressBar;
     QLabel *pochette;
+    QPushButton *precedent;
+    QPushButton *suivant;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -54,6 +56,7 @@ public:
         richGirl = new QPushButton(centralwidget);
         richGirl->setObjectName("richGirl");
         richGirl->setGeometry(QRect(10, 10, 111, 51));
+        richGirl->setProperty("id", QVariant(0));
         paroleAffichage = new QLabel(centralwidget);
         paroleAffichage->setObjectName("paroleAffichage");
         paroleAffichage->setEnabled(true);
@@ -62,22 +65,23 @@ public:
         cantHoldUs = new QPushButton(centralwidget);
         cantHoldUs->setObjectName("cantHoldUs");
         cantHoldUs->setGeometry(QRect(10, 70, 111, 51));
+        cantHoldUs->setProperty("id", QVariant(1));
         pause = new QPushButton(centralwidget);
         pause->setObjectName("pause");
         pause->setEnabled(false);
-        pause->setGeometry(QRect(380, 10, 83, 29));
+        pause->setGeometry(QRect(360, 10, 51, 29));
         lecture = new QPushButton(centralwidget);
         lecture->setObjectName("lecture");
         lecture->setEnabled(false);
-        lecture->setGeometry(QRect(480, 10, 83, 29));
+        lecture->setGeometry(QRect(420, 10, 51, 29));
         paroles = new QCheckBox(centralwidget);
         paroles->setObjectName("paroles");
         paroles->setEnabled(false);
-        paroles->setGeometry(QRect(190, 10, 93, 26));
+        paroles->setGeometry(QRect(140, 10, 93, 26));
         titre = new QLabel(centralwidget);
         titre->setObjectName("titre");
         titre->setEnabled(false);
-        titre->setGeometry(QRect(570, 10, 151, 31));
+        titre->setGeometry(QRect(550, 10, 151, 31));
         horizontalSlider = new QSlider(centralwidget);
         horizontalSlider->setObjectName("horizontalSlider");
         horizontalSlider->setGeometry(QRect(830, 40, 411, 20));
@@ -85,18 +89,21 @@ public:
         traduireParoles = new QCheckBox(centralwidget);
         traduireParoles->setObjectName("traduireParoles");
         traduireParoles->setEnabled(false);
-        traduireParoles->setGeometry(QRect(280, 10, 93, 26));
+        traduireParoles->setGeometry(QRect(230, 10, 93, 26));
         traduireParoles->setMouseTracking(false);
         traduireParoles->setChecked(false);
         onVerra = new QPushButton(centralwidget);
         onVerra->setObjectName("onVerra");
         onVerra->setGeometry(QRect(10, 130, 111, 51));
+        onVerra->setProperty("id", QVariant(2));
         astronaute = new QPushButton(centralwidget);
         astronaute->setObjectName("astronaute");
         astronaute->setGeometry(QRect(10, 190, 111, 51));
+        astronaute->setProperty("3", QVariant(3));
         superman = new QPushButton(centralwidget);
         superman->setObjectName("superman");
         superman->setGeometry(QRect(10, 250, 111, 51));
+        superman->setProperty("id", QVariant(4));
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName("progressBar");
         progressBar->setGeometry(QRect(837, 10, 441, 23));
@@ -104,6 +111,14 @@ public:
         pochette = new QLabel(centralwidget);
         pochette->setObjectName("pochette");
         pochette->setGeometry(QRect(10, 410, 150, 150));
+        precedent = new QPushButton(centralwidget);
+        precedent->setObjectName("precedent");
+        precedent->setEnabled(false);
+        precedent->setGeometry(QRect(320, 10, 31, 31));
+        suivant = new QPushButton(centralwidget);
+        suivant->setObjectName("suivant");
+        suivant->setEnabled(false);
+        suivant->setGeometry(QRect(480, 10, 31, 31));
         MainWindow->setCentralWidget(centralwidget);
         paroleAffichage->raise();
         richGirl->raise();
@@ -119,6 +134,8 @@ public:
         superman->raise();
         progressBar->raise();
         pochette->raise();
+        precedent->raise();
+        suivant->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1327, 22));
@@ -147,6 +164,8 @@ public:
         astronaute->setText(QCoreApplication::translate("MainWindow", "Astronaute", nullptr));
         superman->setText(QCoreApplication::translate("MainWindow", "Superman", nullptr));
         pochette->setText(QString());
+        precedent->setText(QCoreApplication::translate("MainWindow", "<<", nullptr));
+        suivant->setText(QCoreApplication::translate("MainWindow", ">>", nullptr));
     } // retranslateUi
 
 };

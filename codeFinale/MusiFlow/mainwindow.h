@@ -53,6 +53,10 @@ private slots:
 
     void on_superman_clicked();
 
+    void on_precedent_clicked();
+
+    void on_suivant_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -65,6 +69,8 @@ private:
     QSlider* slider;
 
     std::string titreBouton;
+
+    int id;
 
 };
 

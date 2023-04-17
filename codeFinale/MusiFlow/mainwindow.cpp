@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->horizontalSlider->setRange(0,100);
     ui->horizontalSlider->setValue(0);
+
+    ui->cantHoldUs->setProperty("id", 1);
 }
 
 MainWindow::~MainWindow()
@@ -44,10 +46,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_richGirl_clicked()
 {
     titreBouton = "richGirl";
+    id = ui->richGirl->property("id").toInt();
 
     // LECTURE DU FICHIER AUDIO
     /*player->setSource(QUrl::fromLocalFile(prefix + "chansons/richGirl.mp3"));
@@ -68,6 +70,7 @@ void MainWindow::on_richGirl_clicked()
 void MainWindow::on_cantHoldUs_clicked()
 {
     titreBouton = "cantHoldUs";
+    id = ui->cantHoldUs->property("id").toInt();
 
     // LECTURE DU FICHIER AUDIO
     lectureMusique(QString::fromStdString(titreBouton),  player, audio, *ui);
@@ -78,11 +81,13 @@ void MainWindow::on_cantHoldUs_clicked()
 
     // Affichage du titre dans l'ecran
     afficherTitre(ui->cantHoldUs->text().toStdString(), *ui);
+
 }
 
 void MainWindow::on_onVerra_clicked()
 {
     titreBouton = "onVerra";
+    id = ui->onVerra->property("id").toInt();
 
     // LECTURE DU FICHIER AUDIO
     lectureMusique(QString::fromStdString(titreBouton),  player, audio, *ui);
@@ -98,6 +103,7 @@ void MainWindow::on_onVerra_clicked()
 void MainWindow::on_astronaute_clicked()
 {
     titreBouton = "astronaute";
+    id = ui->astronaute->property("id").toInt();
 
     // LECTURE DU FICHIER AUDIO
     lectureMusique(QString::fromStdString(titreBouton),  player, audio, *ui);
@@ -113,6 +119,7 @@ void MainWindow::on_astronaute_clicked()
 void MainWindow::on_superman_clicked()
 {
     titreBouton = "superman";
+    id = ui->superman->property("id").toInt();
 
     // LECTURE DU FICHIER AUDIO
     lectureMusique(QString::fromStdString(titreBouton), player, audio, *ui);
@@ -202,6 +209,8 @@ void activerBoutons(Ui::MainWindow ui)
     ui.pause->setEnabled(true);
     ui.lecture->setEnabled(true);
     ui.progressBar->setEnabled(true);
+    ui.precedent->setEnabled(true);
+    ui.suivant->setEnabled(true);
 }
 
 void desactiverBouton(Ui::MainWindow ui)
@@ -333,3 +342,67 @@ void afficherParolesTraduites(string titre, Ui::MainWindow ui)
         }
     }
 }
+
+void MainWindow::on_precedent_clicked()
+{
+    cerr << "id";
+
+    QString chanson;
+    string titre;
+
+
+    switch (id) {
+    case 0:
+        id = 4;
+        titreBouton = "superman";
+
+        chanson = "superman";
+        titre = "Superman";
+        break;
+
+    case 1:
+        id = 0;
+        titreBouton = "richGirl";
+
+        chanson = "richGirl";
+        titre = "Rich Girl";
+        break;
+
+    case 2:
+        id = 1;
+        titreBouton = "cantHoldUs";
+
+        chanson = "cantHoldUs";
+        titre = "Can't Hold Us";
+        break;
+
+    case 3:
+        id = 2;
+        titreBouton = "onVerra";
+
+        chanson = "onVerra";
+        titre = "On Verra";
+        break;
+
+    case 4:
+        id = 3;
+        titreBouton = "astronaute";
+        chanson = "astronaute";
+        titre = "Astronaute";
+        break;
+
+    default:
+        break;
+    }
+
+    lectureMusique(chanson, player, audio, *ui);
+    changementChanson(*ui);
+    afficherTitre(titre, *ui);
+}
+
+
+void MainWindow::on_suivant_clicked()
+{
+
+}
+

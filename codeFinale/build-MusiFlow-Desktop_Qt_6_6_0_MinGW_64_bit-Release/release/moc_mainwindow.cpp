@@ -55,11 +55,13 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "on_cantHoldUs_clicked",
     "on_onVerra_clicked",
     "on_astronaute_clicked",
-    "on_superman_clicked"
+    "on_superman_clicked",
+    "on_precedent_clicked",
+    "on_suivant_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[28];
+    uint offsetsAndSizes[32];
     char stringdata0[11];
     char stringdata1[20];
     char stringdata2[1];
@@ -74,6 +76,8 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata11[19];
     char stringdata12[22];
     char stringdata13[20];
+    char stringdata14[21];
+    char stringdata15[19];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -92,7 +96,9 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(170, 21),  // "on_cantHoldUs_clicked"
         QT_MOC_LITERAL(192, 18),  // "on_onVerra_clicked"
         QT_MOC_LITERAL(211, 21),  // "on_astronaute_clicked"
-        QT_MOC_LITERAL(233, 19)   // "on_superman_clicked"
+        QT_MOC_LITERAL(233, 19),  // "on_superman_clicked"
+        QT_MOC_LITERAL(253, 20),  // "on_precedent_clicked"
+        QT_MOC_LITERAL(274, 18)   // "on_suivant_clicked"
     },
     "MainWindow",
     "on_richGirl_clicked",
@@ -107,7 +113,9 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "on_cantHoldUs_clicked",
     "on_onVerra_clicked",
     "on_astronaute_clicked",
-    "on_superman_clicked"
+    "on_superman_clicked",
+    "on_precedent_clicked",
+    "on_suivant_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -119,7 +127,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -127,16 +135,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   74,    2, 0x08,    1 /* Private */,
-       3,    1,   75,    2, 0x08,    2 /* Private */,
-       5,    0,   78,    2, 0x08,    4 /* Private */,
-       6,    0,   79,    2, 0x08,    5 /* Private */,
-       7,    1,   80,    2, 0x08,    6 /* Private */,
-       9,    1,   83,    2, 0x08,    8 /* Private */,
-      10,    0,   86,    2, 0x08,   10 /* Private */,
-      11,    0,   87,    2, 0x08,   11 /* Private */,
-      12,    0,   88,    2, 0x08,   12 /* Private */,
-      13,    0,   89,    2, 0x08,   13 /* Private */,
+       1,    0,   86,    2, 0x08,    1 /* Private */,
+       3,    1,   87,    2, 0x08,    2 /* Private */,
+       5,    0,   90,    2, 0x08,    4 /* Private */,
+       6,    0,   91,    2, 0x08,    5 /* Private */,
+       7,    1,   92,    2, 0x08,    6 /* Private */,
+       9,    1,   95,    2, 0x08,    8 /* Private */,
+      10,    0,   98,    2, 0x08,   10 /* Private */,
+      11,    0,   99,    2, 0x08,   11 /* Private */,
+      12,    0,  100,    2, 0x08,   12 /* Private */,
+      13,    0,  101,    2, 0x08,   13 /* Private */,
+      14,    0,  102,    2, 0x08,   14 /* Private */,
+      15,    0,  103,    2, 0x08,   15 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -145,6 +155,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -184,6 +196,10 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_astronaute_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_superman_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_precedent_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_suivant_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -205,6 +221,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->on_onVerra_clicked(); break;
         case 8: _t->on_astronaute_clicked(); break;
         case 9: _t->on_superman_clicked(); break;
+        case 10: _t->on_precedent_clicked(); break;
+        case 11: _t->on_suivant_clicked(); break;
         default: ;
         }
     }
@@ -229,13 +247,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 10;
+        _id -= 12;
     }
     return _id;
 }
