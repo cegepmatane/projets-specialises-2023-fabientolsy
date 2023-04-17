@@ -1,5 +1,4 @@
-# projets-specialises-2023-fabientolsy
-projets-specialises-2023-fabientolsy created by GitHub Classroom
+# MusiFlow - Fabien Tolsy
 
 Le projet consiste a creer une application de lecture audio. Des musiques sont integrees dans l'application et l'utilisateur peuyt se balader dans cette bibliohreque de chansons et les lire, a la meme maniere que peut faire Spotify ou Deezer.
 
