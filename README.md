@@ -11,4 +11,4 @@ Le deuxieme probleme que j'ai rencontre concerne MySQL. En effet, a l'origine du
 
 Dans un cadre de projet personnel et non plus scloraire, j'aimerais prendre le temps de continuer a travailler dessus afin de rendre l'applicaiton plus jolie, avec plus de contenut, donner le choix a l'utilisateur de choisir la langue des paroles traduites et qu'il puisse se connecter / s'inscrire afin de se creer des listes de lecture.
 
-Une demonstration de l'application 1.0 est disponible sur YouTube: https://youtu.be/lyI8nsXaVdc
+Une demonstration de l'application 1.0 est disponible sur YouTube: https://youtu.be/QjNxL2SmHpE
